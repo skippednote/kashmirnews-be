@@ -3,11 +3,13 @@ const helmet = require('helmet');
 const cors = require('cors');
 const getNews = require('./cron/getNews');
 const newsCache = require('./cache/newsCache');
+const {PRODUCTION, PORT} = require('./utils');
 
-const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: PRODUCTION ? 'https://kn.bassam.co' : 'http://localhost:3000'
+}));
 app.disable('x-powered-by');
 
 getNews.start();
