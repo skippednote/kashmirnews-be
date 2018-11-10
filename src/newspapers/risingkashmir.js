@@ -2,7 +2,7 @@ const axios = require('axios');
 const nanoid = require('nanoid');
 
 const SOURCE = 'Rising Kashmir';
-const BASE_URL = 'https://www.risingkashmir.com/';
+const BASE_URL = 'http://www.risingkashmir.com/';
 
 function formatNews(news) {
   const newsItems = news.result.reduce(
