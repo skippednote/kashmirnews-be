@@ -1,4 +1,7 @@
 {
   "version": 1,
-  "alias": ["kashmirnews.now.sh"]
+  "alias": ["kashmirnews.now.sh"],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
